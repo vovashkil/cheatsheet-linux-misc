@@ -21,3 +21,6 @@ openssl x509 -enddate -noout -in server.crt
 openssl x509 -noout -modulus -in server.crt | openssl md5
 
 openssl rsa -noout -modulus -in server.key | openssl md5
+
+### Configure 802.1Q VLAN Tagging
+ip link add link vmbr0 name vmbr0.10 type vlan id 10
