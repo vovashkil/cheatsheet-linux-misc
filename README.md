@@ -19,4 +19,5 @@ openssl x509 -enddate -noout -in server.crt
  
 #### SSL certificate and prtivate key match
 openssl x509 -noout -modulus -in server.crt | openssl md5
+
 openssl rsa -noout -modulus -in server.key | openssl md5
