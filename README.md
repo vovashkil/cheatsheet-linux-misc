@@ -23,23 +23,23 @@ openssl x509 -noout -modulus -in server.crt | openssl md5
 openssl rsa -noout -modulus -in server.key | openssl md5
 
 ### Configure 802.1Q VLAN Tagging
-ip link add link bond0 name bond0.10 type vlan id 10
-ip link set bond0.10 up
-brctl addif vmbr0 bond0.10
-ip addr add 10.134.41.31/24 dev vmbr0 label vmbr0:10
+ ip link add link bond0 name bond0.10 type vlan id 10
+ ip link set bond0.10 up
+ brctl addif vmbr0 bond0.10
+ ip addr add 10.134.41.31/24 dev vmbr0 label vmbr0:10
 
 ### DRBD Split Brain
 #### Choose one node and run
-drbdadm secondary all
-drbdadm disconnect all
-drbdadm -- --discard-my-data connect all
+ drbdadm secondary all
+ drbdadm disconnect all
+ drbdadm -- --discard-my-data connect all
 
 #### Make other node primary
-drbdadm primary all
-drbdadm disconnect all
-drbdadm connect all
+ drbdadm primary all
+ drbdadm disconnect all
+ drbdadm connect all
 
 ##### Check /proc/drbd again
 
 #### IPMI
-ipmitool -I lanplus -H <ip> -U ADMIN sol activate
+ ipmitool -I lanplus -H <ip> -U ADMIN sol activate
