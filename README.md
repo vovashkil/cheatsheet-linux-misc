@@ -49,4 +49,4 @@ drbdadm connect all
 ##### Check /proc/drbd again
 
 #### IPMI
-ipmitool -I lanplus -H <ip> -U ADMIN sol activate
+ipmitool -I lanplus -H 10.10.10.10 -U ADMIN sol activate
