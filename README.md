@@ -46,7 +46,7 @@ drbdadm disconnect all
 
 drbdadm connect all
 
-##### Check /proc/drbd again
+#### Check /proc/drbd again
 
-#### IPMI
+### IPMI
 ipmitool -I lanplus -H 10.10.10.10 -U ADMIN sol activate
