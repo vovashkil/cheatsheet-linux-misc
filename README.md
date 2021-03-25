@@ -50,3 +50,6 @@ drbdadm connect all
 
 ### IPMI
 ipmitool -I lanplus -H 10.10.10.10 -U ADMIN sol activate
+
+### tcpdump
+tcpdump -p -n -i external -s 1500 -l -x -X -c 1000000 -w /tmp/foo.dump
