@@ -29,7 +29,7 @@ ip link set bond0.10 up
 
 brctl addif vmbr0 bond0.10
 
-ip addr add 10.134.41.31/24 dev vmbr0 label vmbr0:10
+ip addr add 10.10.10.10/24 dev vmbr0 label vmbr0:10
 
 ### DRBD Split Brain
 #### Choose one node and run
