@@ -53,3 +53,9 @@ ipmitool -I lanplus -H 10.10.10.10 -U ADMIN sol activate
 
 ### tcpdump
 tcpdump -p -n -i external -s 1500 -l -x -X -c 1000000 -w /tmp/foo.dump
+
+### zabbix server reset auth to default one if ldap is broken, default creds: Admin/zabbix
+sudo -u zabbix psql
+
+zabbix=>  update config set authentication_type=0 ;
+ UPDATE 1
