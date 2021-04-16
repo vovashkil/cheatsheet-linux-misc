@@ -23,6 +23,7 @@ openssl x509 -noout -modulus -in server.crt | openssl md5
 openssl rsa -noout -modulus -in server.key | openssl md5
 
 ### Configure 802.1Q VLAN Tagging
+#### NB! Doing this (native vlan + tagged vlan in a bridge) on more than 1 node in a cluster will cause broadcast storm due to l2 loop
 ip link add link bond0 name bond0.10 type vlan id 10
 
 ip link set bond0.10 up
