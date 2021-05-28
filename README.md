@@ -60,3 +60,14 @@ sudo -u zabbix psql
 
 zabbix=>  update config set authentication_type=0 ;
  UPDATE 1
+
+### Add Secondary IP Address To CentOS / RHEL Network Interface
+
+/etc/sysconfig/network-scripts/ifcfg-eth0:1
+DEVICE=eth0:1
+Type=Ethernet
+ONBOOT=yes
+NM_CONTROLLED=no
+BOOTPROTO=none
+IPADDR=10.10.10.11
+PREFIX=24
