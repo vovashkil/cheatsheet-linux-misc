@@ -78,3 +78,6 @@ BOOTPROTO=none
 IPADDR=10.10.10.11
 
 PREFIX=24
+
+### Check snmp is working with get uptime
+snmpwalk -v2c -c public  10.10.10.10 1.3.6.1.2.1.1.3
