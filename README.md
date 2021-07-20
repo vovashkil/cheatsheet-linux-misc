@@ -84,3 +84,10 @@ snmpwalk -v2c -c public  10.10.10.10 1.3.6.1.2.1.1.3
 
 ### dnsdist access letsencrrypt certs destination
 https://www.server-world.info/en/note?os=Debian_10&p=acl
+
+### ceph warning after ceph upgrade
+#### https://forum.proxmox.com/threads/ceph-nautilus-and-octopus-security-update-for-insecure-global_id-reclaim-cve-2021-20288.88038/
+systemctl try-reload-or-restart pvestatd.service pvedaemon.service
+
+ceph config set mon auth_allow_insecure_global_id_reclaim false
+
